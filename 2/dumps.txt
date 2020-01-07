@@ -1,0 +1,4 @@
+mysqldump example > dump.sql
+mysql -e 'CREATE DATABASE sample'
+mysql sample < dump.sql
+mysqldump --where="TRUE LIMIT 100" mysql help_keyword > dump100.sql

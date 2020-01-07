@@ -1,0 +1,14 @@
+DROP DATABASE IF EXISTS example;
+CREATE DATABASE example;
+
+USE example;
+
+DROP TABLE IF EXISTS users;
+CREATE TABLE users (
+	id INT UNSIGNED NOT NULL PRIMARY KEY,
+	name VARCHAR(255)
+);
+
+INSERT INTO users VAlUES (1, 'test');
+
+SELECT * FROM users;
