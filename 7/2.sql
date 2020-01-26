@@ -9,3 +9,10 @@ SELECT name,
 	description, 
 	price 
 FROM products;
+
+-- запрос через join
+
+SELECT products.name, catalogs.name, price, description FROM products 
+JOIN catalogs
+ON catalogs.id = products.catalog_id;
+
