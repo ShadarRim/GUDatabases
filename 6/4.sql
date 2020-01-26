@@ -25,4 +25,3 @@ SELECT
 	FROM 
 	(SELECT user_id, COUNT(*) as cou FROM likes GROUP BY user_id) AS subtub1
 	) as subtab2 GROUP BY sex LIMIT 1;
-

@@ -30,13 +30,18 @@ SELECT SUM(tab2.likes_count) FROM
 ;
 
 -- ещё вариант №2
-SELECT target_id, COUNT(*) as count_likes FROM likes WHERE target_type_id = 2 AND target_id IN
-(SELECT * FROM
-	(SELECT user_id FROM profiles ORDER BY birthday DESC LIMIT 10) as tab)
-GROUP BY target_id;
+SELECT SUM(count_likes) FROM (
+	SELECT target_id, COUNT(*) as count_likes FROM likes WHERE target_type_id = 2 AND target_id IN
+	(SELECT * FROM
+		(SELECT user_id FROM profiles ORDER BY birthday DESC LIMIT 10) as tab)
+	GROUP BY target_id) AS fintab;
 
 -- обратите внимание, что ответы не сходятся
 -- всё дело в том, что первый запрос считает лайки, у пользователей, а затем сортирует по возрасту
 -- второй же запрос сначала находит топ-10 по возрасту, потому считает их лайки (точнее оставляет)
 -- в итоге по второму запросу есть пользователи, который не в топ-10 попали, но лайков не получили
 -- а в первом запросе топ-10 из тех кто получил лайки
+
+
+
+
