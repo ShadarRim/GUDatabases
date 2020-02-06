@@ -2,7 +2,6 @@ USE vk;
 
 
 SELECT DISTINCT name,
-		AVG(COUNT(*) OVER w) as 'Avg',
 		COUNT(*) OVER w AS 'Cou',
 		MIN(profiles.birthday) OVER w AS 'min_b',
 		MAX(profiles.birthday) OVER w AS 'max_b',
