@@ -113,4 +113,4 @@ CREATE TABLE achiv_persons (
 	person_id INT UNSIGNED,
 	achiv_id INT UNSIGNED,
 	PRIMARY KEY (achiv_id, person_id)
-)
+);
