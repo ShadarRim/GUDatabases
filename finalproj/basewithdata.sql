@@ -525,7 +525,7 @@ INSERT INTO `achiv_persons` (`person_id`, `achiv_id`) VALUES (200, 500);
 DROP TABLE IF EXISTS `achive_types`;
 
 CREATE TABLE `achive_types` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -544,7 +544,7 @@ INSERT INTO `achive_types` (`id`, `name`) VALUES ('5', 'other');
 DROP TABLE IF EXISTS `achivments`;
 
 CREATE TABLE `achivments` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `type_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -1259,7 +1259,7 @@ INSERT INTO `achivments` (`id`, `name`, `type_id`) VALUES ('700', 'dolores', 5);
 DROP TABLE IF EXISTS `courses`;
 
 CREATE TABLE `courses` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `coure_length_week` int(10) unsigned NOT NULL,
   `max_students` int(10) unsigned DEFAULT 0,
@@ -1475,7 +1475,7 @@ INSERT INTO `courses` (`id`, `name`, `coure_length_week`, `max_students`) VALUES
 DROP TABLE IF EXISTS `courses_rooms`;
 
 CREATE TABLE `courses_rooms` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `course_id` int(10) unsigned DEFAULT NULL,
   `room_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -2325,7 +2325,7 @@ INSERT INTO `persons_statuses` (`person_id`, `status_id`) VALUES (300, 1);
 DROP TABLE IF EXISTS `room_types`;
 
 CREATE TABLE `room_types` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -2342,7 +2342,7 @@ INSERT INTO `room_types` (`id`, `name`) VALUES ('3', 'adminroom');
 DROP TABLE IF EXISTS `rooms`;
 
 CREATE TABLE `rooms` (
-  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
   `room_number` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `max_students` int(10) unsigned DEFAULT NULL,
   `room_type` int(10) unsigned DEFAULT NULL,

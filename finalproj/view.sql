@@ -1,6 +1,6 @@
 USE university;
 
-DROP VIEW student_courses_names;
+
 
 CREATE VIEW student_courses_names AS (
 	SELECT persons.first_name, persons.last_name, courses.name
